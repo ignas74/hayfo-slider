@@ -15,13 +15,13 @@
 
 if (!defined('ABSPATH')) { die; }
 
-add_shortcode( 'hayfo-slider','create_shortcode' );
-add_action( 'wp_enqueue_scripts', 'enqueue' );
+require_once plugin_dir_path( __FILE__ ) . 'includes/Init.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/Admin.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/Enqueue.php'; 
 
-function enqueue() {
-    wp_enqueue_style( 'hayfo-slider-styles', plugins_url( 'assets/slider-styles.css', __FILE__) ); 
-    wp_enqueue_script( 'hayfo-slider-scripts', plugins_url( 'assets/slider-script.js', __FILE__ ) );
-}
+HayfoSlider\Init::initialize();
+
+add_shortcode( 'hayfo-slider','create_shortcode' );
 
 function create_shortcode() {
     ob_start();
@@ -31,7 +31,7 @@ function create_shortcode() {
 }
 
 function get_latest_products() {
-    if( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) { return 0; }
+    if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) { return 0; }
 
     $query = new WC_Product_query( array(
         'limit' => -1,
@@ -45,7 +45,7 @@ function get_latest_products() {
 }
 
 function get_most_popular_products() {
-    if( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) { return 0; }
+    if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) { return 0; }
 
     $query = new WC_Product_Query( array(
         'limit' => -1,
@@ -60,3 +60,4 @@ function get_most_popular_products() {
 
     if ( ! empty( $products ) ) { require_once( 'assets/index.php' ); }
 }
+
