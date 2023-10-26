@@ -1,0 +1,84 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    max-width: 100% !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider {
+    /* Move slider by changing --slider-index value */
+    --items-per-screen: 4;
+    --slider-index: 0;
+    transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
+
+    display: flex;
+    flex-grow: 1;
+    margin: 0 .25rem;
+}
+
+/* Update the styling for product containers */
+.single-product {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
+    aspect-ratio: 16 / 9;
+    padding: 0.25rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.single-product > a {
+    flex: 1; /* Stretch the anchor element to fill the space */
+}
+
+.single-product > a > img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.handle {
+    border: none;
+    flex-grow: 0;
+    width: 5rem;
+    background-color: rgba(0, 0, 0, .25);
+    z-index: 10;
+    margin: .25rem 0;
+    padding: 0 .5rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 5rem;
+    line-height: 0;
+    transition: background-color 150ms ease-in-out;
+}
+
+.handle:hover,
+.handle:focus {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.text {
+    transition: transform 150ms ease-in-out;
+}
+
+.handle:hover .text,
+.handle:focus .text {
+    transform: scale(1.1);
+}
