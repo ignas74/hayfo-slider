@@ -10,5 +10,7 @@ class EnqueueScripts {
     function enqueue() {
         wp_enqueue_style( 'hayfo-slider-styles', dirname( plugin_dir_url( __FILE__ ) ) . '/assets/slider-styles.css' ); 
         wp_enqueue_script( 'hayfo-slider-scripts', dirname( plugin_dir_url( __FILE__ ) ) . '/assets/slider-script.js' );
+
+        // wp_localize_script
     }
 }

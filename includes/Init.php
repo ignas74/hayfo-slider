@@ -4,6 +4,7 @@ namespace HayfoSlider;
 
 use Admin\Admin;
 use Enqueue\EnqueueScripts;
+use Query\Queries;
 
 class Init {
     public static function initialize() {
@@ -12,5 +13,8 @@ class Init {
 
         $enqueue = new EnqueueScripts();
         $enqueue->register();
+
+        $queries = new Queries();
+        $queries->register();
     }
 }
