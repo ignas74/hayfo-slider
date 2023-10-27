@@ -12,10 +12,10 @@ class Init {
         $admin = new Admin();
         $admin->register();
 
-        $enqueue = new EnqueueScripts( "4" );
+        $enqueue = new EnqueueScripts( '' );
         $enqueue->register();
 
-        $frontend = new Frontend( "4" );
+        $frontend = new Frontend( '' );
         $frontend->register();
 
         // new Queries();

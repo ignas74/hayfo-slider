@@ -9,6 +9,9 @@ use Queries as Q;
 class Frontend {
     private $frames_number;
 
+    /**
+     * @TODO Setter for $frames_number in create_shortcode()
+     */
     public function __construct( $frames_number ) {
         $this->frames_number = $frames_number;
     }
