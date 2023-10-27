@@ -1,21 +1,11 @@
-/**
- * @package HayfoSlider
- */
-
-/**
- * @value frames.value - from @namespace HayfoSlider\Base\EnqueueScripts;
- * This value is set in Admin panel and later global get_option() was used.
- * console.log(frames.value)
- */
-
 'use strict'
 
-// console.log('check:' + items.screen)
+console.log('CHECK: ' + parseInt( frames.value ))
 
 // Set slider's frames from Admin panel to CSS
 // document.addEventListener('DOMContentLoaded', () => {
-//     const slider = document.querySelector('.slider')
-//     slider.style.setProperty('--items-per-screen', items.screen) 
+//     const slider = document.querySelector('.hfo-slider')
+//     slider.style.setProperty('--items-per-screen', frames.value) 
 // })
 
 document.addEventListener('click', e => {

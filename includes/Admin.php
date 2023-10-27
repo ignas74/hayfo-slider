@@ -45,9 +45,6 @@ class Admin {
 
 
 
-
-
-
 /**function hayfo_slider_settings_init() {
         add_settings_section(
             'hayfo_slider_carousel_frame_settings_section',
