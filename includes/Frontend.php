@@ -7,6 +7,9 @@ use Queries as Q;
 
 class Frontend {
     function register() {
+        /**
+         * @TODO more than 2 shortcodes? Adjust checking in create_shortcode().
+         */
         $shortcodes = array(
             'hayfo-slider-wc-latest' => 'Latest Products',
             'hayfo-slider-wc-popular' => 'Most Popular Products'
