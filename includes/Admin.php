@@ -36,8 +36,9 @@ class Admin {
             <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
         </div>
 
-        <div>Shortcode 1:</div>
-        <div>Shortcode 2:</div>
+        <code>Shortcode Latest Products: [hayfo-slider-wc-latest]</code><br>
+        <code>Shortcode Popular Products: [hayfo-slider-wc-popular]</code><br>
+        <code>To change shown frames, add as follows: [hayfo-slider-wc-latest frames="4"]. 4 - default value</code>
         <?php
     }
 }

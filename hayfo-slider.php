@@ -13,3 +13,9 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/Enqueue.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/Query.php'; 
 require_once plugin_dir_path( __FILE__ ) . 'includes/Frontend.php'; 
 HayfoSlider\Init::initialize();
+
+/**
+ * shortcodes to Admin.php
+ * 
+ * frames.value -> assets/javascript
+ */

@@ -1,9 +1,9 @@
 /**
- * @package HayfoDSlider
+ * @package HayfoSlider
  */
 
 /**
- * @value frames.value - from @namespace HayfoDSlider\Base\EnqueueScripts;
+ * @value frames.value - from @namespace HayfoSlider\Base\EnqueueScripts;
  * This value is set in Admin panel and later global get_option() was used.
  * console.log(frames.value)
  */
@@ -22,10 +22,10 @@ document.addEventListener('click', e => {
     // Fix for .text usage inside the button .handle
     let handle
     
-    if (e.target.matches('.handle')) {
+    if (e.target.matches('.hfo-handle')) {
         handle = e.target
     } else {
-        handle = e.target.closest('.handle')
+        handle = e.target.closest('.hfo-handle')
     }
     
     if (handle != null) {
@@ -34,19 +34,19 @@ document.addEventListener('click', e => {
 })
 
 function onHandleClick(handle) {
-    const slider = handle.closest('.container').querySelector('.slider')
+    const slider = handle.closest('.hfo-container').querySelector('.hfo-slider')
     const sliderIndex = parseInt(getComputedStyle(slider).getPropertyValue('--slider-index'))
     const itemsPerScreen = parseInt(getComputedStyle(slider).getPropertyValue('--items-per-screen'))
 
-    console.log(`Items per screen from function: ${itemsPerScreen}`)
+    // console.log(`Items per screen from function: ${itemsPerScreen}`)
 
     const maxIndex = Math.ceil(slider.childElementCount / itemsPerScreen) - 1
 
     let newIndex
 
-    if (handle.classList.contains('left-handle')) {
+    if (handle.classList.contains('hfo-left-handle')) {
         newIndex = sliderIndex - 1
-    } else if (handle.classList.contains('right-handle')) {
+    } else if (handle.classList.contains('hfo-right-handle')) {
         newIndex = sliderIndex + 1
     }
 
