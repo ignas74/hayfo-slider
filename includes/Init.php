@@ -12,10 +12,10 @@ class Init {
         $admin = new Admin();
         $admin->register();
 
-        $enqueue = new EnqueueScripts( '' );
+        $enqueue = new EnqueueScripts( '4' ); // default frames value 
         $enqueue->register();
 
-        $frontend = new Frontend( '' );
+        $frontend = new Frontend( '4' ); // default frames value 
         $frontend->register();
 
         // new Queries();
