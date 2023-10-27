@@ -9,7 +9,7 @@ namespace Admin;
 class Admin {
     function register() {
         add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
-        add_action( 'admin_init', array( $this, 'hayfo_slider_settings_init' ) );
+        // add_action( 'admin_init', array( $this, 'hayfo_slider_settings_init' ) );
         add_filter( 'plugin_action_links_' . dirname( dirname( plugin_basename(__FILE__) ) ) . '/hayfo-slider.php', array( $this, 'plugin_link_to_admin_page' ) );
     }
 
@@ -30,7 +30,24 @@ class Admin {
         );
     }
 
-    function hayfo_slider_settings_init() {
+    function admin_index() {
+        ?>
+        <div class="wrap">
+            <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+        </div>
+
+        <div>Shortcode 1:</div>
+        <div>Shortcode 2:</div>
+        <?php
+    }
+}
+
+
+
+
+
+
+/**function hayfo_slider_settings_init() {
         add_settings_section(
             'hayfo_slider_carousel_frame_settings_section',
             '', // Title
@@ -92,6 +109,4 @@ class Admin {
             </div>
         <?php
     }
-
-}
-
+ */

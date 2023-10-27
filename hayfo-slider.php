@@ -11,4 +11,5 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/Init.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/Admin.php';
 require_once plugin_dir_path( __FILE__ ) . 'includes/Enqueue.php'; 
 require_once plugin_dir_path( __FILE__ ) . 'includes/Query.php'; 
+require_once plugin_dir_path( __FILE__ ) . 'includes/Frontend.php'; 
 HayfoSlider\Init::initialize();
