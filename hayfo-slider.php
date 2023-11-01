@@ -6,7 +6,7 @@
  * Description:       Slider USING THIS ONE
 */
 
-if (!defined('ABSPATH')) die;
+if ( ! defined( 'ABSPATH' )) die;
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // is_plugin_active()
 
