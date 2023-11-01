@@ -12,9 +12,11 @@ class Product {
             include( dirname( plugin_dir_path( __FILE__ ) ) . '/assets/index.php' ); 
         }
         else {
-            echo '<div>';
-            echo '<h3>Query did not find any products or there is not products at all.</h3>';
-            echo '</div>';
+            ?>
+                <div class="hfo-slider-err">
+                    <h3><?php __( 'Query did not find any products or there is not products at all.', 'hayfo-slider') ?></h3>
+                </div>
+            <?php
         }
     }
 }

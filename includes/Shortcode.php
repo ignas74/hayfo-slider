@@ -44,5 +44,4 @@ class Shortcode {
         Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 
         return ob_get_clean();
     }
-
 }
