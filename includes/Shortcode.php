@@ -34,8 +34,6 @@ class Shortcode {
     function create_shortcode( $atts, $title ) {
         $frames = shortcode_atts( array( 'frames' => '4' ), $atts )['frames'];
 
-        var_dump( $frames );
-
         $this->setFrames( $frames );
 
         /**
@@ -43,9 +41,7 @@ class Shortcode {
          */
         ob_start();
         echo "$title";
-        $title === "Latest Products" ? 
-            Product::display_products( Query::latest_query_array() ) : 
-            Product::display_products( Query::popular_query_array() );
+        Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 
         return ob_get_clean();
     }
 

@@ -1,6 +1,6 @@
 'use strict'
 
-console.log('CHECKs: ' + Object.values(frames.value) )
+// console.log('CHECKs: ' + Object.values(frames.value) )
 
 // Set slider's frames from Admin panel to CSS
 document.addEventListener('DOMContentLoaded', () => {

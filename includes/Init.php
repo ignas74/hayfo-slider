@@ -11,10 +11,10 @@ class Init {
         $admin = new Admin();
         $admin->register();
         
-        $shortcode = new Shortcode(); // default frames value 
+        $shortcode = new Shortcode();
         $shortcode->register();
         
-        $enqueue = new Enqueue(); // default frames value 
+        $enqueue = new Enqueue(); 
         $enqueue->setShortcode( $shortcode );
         $enqueue->register();
     }

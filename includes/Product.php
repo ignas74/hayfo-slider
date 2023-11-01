@@ -1,6 +1,6 @@
 <?php
 
-use WC_Product_query;
+// use WC_Product_query;
 
 class Product {
     public static function display_products( $query_array ) {
@@ -8,9 +8,13 @@ class Product {
     
         $products = $query->get_products();
 
-        /**
-         * @TODO include instead of require? require throws Fatal Error, include throws just a Warning.
-         */
-        if ( ! empty( $products ) ) { require( dirname( plugin_dir_path( __FILE__ ) ) . '/assets/index.php' ); }
+        if ( ! empty( $products ) ) { 
+            include( dirname( plugin_dir_path( __FILE__ ) ) . '/assets/index.php' ); 
+        }
+        else {
+            echo '<div>';
+            echo '<h3>Query did not find any products or there is not products at all.</h3>';
+            echo '</div>';
+        }
     }
 }
