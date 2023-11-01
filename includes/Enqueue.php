@@ -1,9 +1,5 @@
 <?php
 
-namespace Enqueue;
-
-use Shortcode;
-
 class Enqueue {
     private $shortcode;
 

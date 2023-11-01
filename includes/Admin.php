@@ -4,8 +4,6 @@
  * @see https://developer.wordpress.org/plugins/settings/custom-settings-page/
  */
 
-namespace Admin;
-
 class Admin {
     function register() {
         add_action( 'admin_menu', array( $this, 'add_admin_page' ) );

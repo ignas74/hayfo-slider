@@ -1,14 +1,9 @@
 <?php
 
-// use WC_Product_query;
+use WC_Product_query;
 
 class Product {
-    public static function display_products( $query_array ) { // Query::
-        /**
-         * @TODO error handling if !woocommerce.
-         */
-        if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) { return 0; }
-
+    public static function display_products( $query_array ) {
         $query = new WC_Product_query( $query_array );
     
         $products = $query->get_products();
