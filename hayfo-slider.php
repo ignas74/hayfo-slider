@@ -13,7 +13,7 @@ require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // is_plugin_active()
 add_action( 'init', 'hayfo_slider_init' );
 
 function hayfo_slider_init() {
-    if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+    if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {  // Probably wrong dir as I have woocommerce core inside the plugin
         require_once plugin_dir_path( __FILE__ ) . 'includes/Init.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/Admin.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/Enqueue.php'; 
