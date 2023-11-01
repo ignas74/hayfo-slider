@@ -3,21 +3,23 @@
 namespace HayfoSlider;
 
 use Admin\Admin;
-use Enqueue\EnqueueScripts;
-use Frontend\Frontend;
+use Enqueue\Enqueue;
+use Display;
+use Shortcode;
 // use Query\Queries;
 
 class Init {
     public static function initialize() {
         $admin = new Admin();
         $admin->register();
-
-        $enqueue = new EnqueueScripts( '4' ); // default frames value 
+        
+        $shortcode = new Shortcode(); // default frames value 
+        $shortcode->register();
+        
+        $enqueue = new Enqueue(); // default frames value 
+        $enqueue->setShortcode( $shortcode );
         $enqueue->register();
 
-        $frontend = new Frontend( '4' ); // default frames value 
-        $frontend->register();
-
-        // new Queries();
+        // new Display();
     }
 }

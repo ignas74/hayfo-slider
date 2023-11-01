@@ -1,12 +1,12 @@
 'use strict'
 
-console.log('CHECK: ' + parseInt( frames.value ))
+console.log('CHECKs: ' + Object.values(frames.value) )
 
 // Set slider's frames from Admin panel to CSS
-// document.addEventListener('DOMContentLoaded', () => {
-//     const slider = document.querySelector('.hfo-slider')
-//     slider.style.setProperty('--items-per-screen', frames.value) 
-// })
+document.addEventListener('DOMContentLoaded', () => {
+    const sliders = document.querySelector('.hfo-slider')
+    sliders.style.setProperty('--items-per-screen', Object.values(frames.value)) 
+})
 
 document.addEventListener('click', e => {
     // Fix for .text usage inside the button .handle

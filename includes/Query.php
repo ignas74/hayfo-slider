@@ -1,8 +1,6 @@
 <?php
 
-// namespace Query;
-
-class Queries {
+class Query {
     public static function latest_query_array() {
         return array (
             'limit' => -1,
