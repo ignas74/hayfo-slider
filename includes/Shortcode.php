@@ -16,9 +16,6 @@ class Shortcode {
     }
 
     function register() {
-        /**
-         * @TODO more than 2 shortcodes? Adjust checking in create_shortcode().
-         */
         $shortcodes = array(
             'hayfo-slider-wc-latest' => 'Latest Products',
             'hayfo-slider-wc-popular' => 'Most Popular Products'
@@ -36,9 +33,6 @@ class Shortcode {
 
         $this->setFrames( $frames );
 
-        /**
-         * @TODO better checking, if more than 2 shortcodes.
-         */
         ob_start();
         echo "$title";
         Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 

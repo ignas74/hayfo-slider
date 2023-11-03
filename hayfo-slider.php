@@ -6,6 +6,15 @@
  * Description:       Slider USING THIS ONE
 */
 
+/**
+ * @TODO 
+ * fe console errors
+ * more than 2 shortcodes
+ * Enqueue - register styles?
+ * more Query
+ * Shortcode move $title html
+ */
+
 if ( ! defined( 'ABSPATH' )) die;
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // is_plugin_active()

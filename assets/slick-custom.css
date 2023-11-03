@@ -1,7 +1,7 @@
 /* to be turned off */
-body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+/* body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
     max-width: 100% !important;
-}
+} */
 
 /* Arrows */
 .slick-prev,
@@ -26,4 +26,29 @@ body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alig
 .slick-next:before
 {
     color: black;
+}
+
+.hfo-slider {
+    /* display: flex; by default from Slick Slider */
+}
+
+.hfo-single-product {
+    /* border: 1px solid black; */
+    flex: 0 0 100%;
+    margin: 0 .25rem;
+}
+
+.hfo-single-product > a > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hfo-product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.hfo-product-details > p {
+    margin: 0;
 }
