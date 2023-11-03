@@ -12,7 +12,7 @@ class Admin {
     }
 
    function plugin_link_to_admin_page( $links_array ) {
-        $link[] = '<a href="' . admin_url( 'admin.php?page=hayfo_slider_settings_page' ) . '">Settings</a>';
+        $link[] = '<a href="' . esc_url( admin_url( 'admin.php?page=hayfo_slider_settings_page' ) ) . '">Settings</a>';
         return array_merge( $links_array, $link );
     }
 
