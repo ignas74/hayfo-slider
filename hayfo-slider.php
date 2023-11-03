@@ -13,6 +13,8 @@
  * Enqueue - register styles?
  * more Query
  * Shortcode move $title html
+ * if ( is_plugin_active( 'woocommerce/woocommerce.php' ) path?
+ * uninstall.php, activate, deactivate plugin
  */
 
 if ( ! defined( 'ABSPATH' )) die;
