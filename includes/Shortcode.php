@@ -1,9 +1,11 @@
 <?php
 
 class Shortcode {
-    private $frames_number;
+    private $frames_number, $query, $product_display;
 
-    public function __construct( $frames_numbers = '4' ) {
+    public function __construct( Query $query, Product $product_display, $frames_numbers = '4' ) {
+        $this->query = $query;
+        $this->product_display = $product_display;
         $this->frames_number = $frames_numbers;
     }
 
@@ -17,6 +19,7 @@ class Shortcode {
 
     function register() {
         $shortcodes = array(
+            // Value checking
             'hayfo-slider-wc-latest' => 'Latest Products',
             'hayfo-slider-wc-popular' => 'Most Popular Products',
             'hayfo-slider-wc-onsale' => 'On Sale Products'
@@ -35,22 +38,22 @@ class Shortcode {
         $this->setFrames( $frames );
 
         ob_start();
-        echo "$title";
-        // Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 
+        echo "$title"; // Where to transfer it
+        $this->decider( $title );
+        return ob_get_clean();
+    }
 
-        // improve case checking
-
+    function decider( $title ) {
         switch( $title ) {
             case 'Latest Products':
-                Product::display_products( Query::latest_query_array() );
+                $this->product_display->display_products( $this->query->latest_query_array() );
                 break;
             case 'Most Popular Products':
-                Product::display_products( Query::popular_query_array() );
+                $this->product_display->display_products( $this->query->popular_query_array() );
                 break;
             case 'On Sale Products':
-                Product::display_products( Query::on_sale_query_array() );
+                $this->product_display->display_products( $this->query->on_sale_query_array() );
                 break;
         }
-        return ob_get_clean();
     }
 }

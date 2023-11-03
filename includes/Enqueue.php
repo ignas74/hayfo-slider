@@ -3,7 +3,7 @@
 class Enqueue {
     private $shortcode;
 
-    public function setShortcode( Shortcode $shortcode ) {
+    public function __construct( Shortcode $shortcode ) {
         $this->shortcode = $shortcode;
     }
 
