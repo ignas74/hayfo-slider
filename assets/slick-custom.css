@@ -52,3 +52,7 @@
 .hfo-product-details > p {
     margin: 0;
 }
+
+.on-sale-price {
+    text-decoration: line-through;
+}

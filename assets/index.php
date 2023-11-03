@@ -10,14 +10,14 @@
                 <span>
 
                     <!-- TO BE IMPROVED -->
-                    
+
                     <?php if( ! $product->is_on_sale() ) : ?>
                         <?php echo esc_html( $product->get_price() ); ?>
                         <?php echo esc_html( get_woocommerce_currency_symbol() ); ?>
                     <?php else : ?>
                         <?php echo esc_html( $product->get_price() ); ?>
                         <?php echo esc_html( get_woocommerce_currency_symbol() ); ?>
-                        <?php echo esc_html( $product->get_regular_price() ); ?>
+                        <p class="on-sale-price"><?php echo esc_html( $product->get_regular_price() ); ?></p>
                         <?php echo esc_html( get_woocommerce_currency_symbol() ); ?>
                     <?php endif;  ?>
                 </span>
