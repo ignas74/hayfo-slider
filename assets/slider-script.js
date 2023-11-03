@@ -1,13 +1,11 @@
-console.log('check')
 
-var $ = jQuery;
+console.log('check ' + frames.value)
+
+const $ = jQuery;
+const frms = parseInt(frames.value);
 
 $('.hfo-slider').slick({
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    // infinite: true,
+    slidesToShow: frms,
+    slidesToScroll: frms,
     arrows: true,
-    // dots: true,
-    // appendArrows: '',
-    // dotsPosition: 'bottom',
-  });
+});
