@@ -8,7 +8,7 @@ class Admin {
     function register() {
         add_action( 'admin_menu', array( $this, 'add_admin_page' ) );
         // add_action( 'admin_init', array( $this, 'hayfo_slider_settings_init' ) );
-        add_filter( 'plugin_action_links_' . dirname( dirname( plugin_basename(__FILE__) ) ) . '/hayfo-slider.php', array( $this, 'plugin_link_to_admin_page' ) );
+        add_filter( 'plugin_action_links_' . plugin_basename( dirname( dirname( __FILE__ ) ) ) . '/hayfo-slider.php', array( $this, 'plugin_link_to_admin_page' ) );
     }
 
    function plugin_link_to_admin_page( $links_array ) {

@@ -18,7 +18,8 @@ class Shortcode {
     function register() {
         $shortcodes = array(
             'hayfo-slider-wc-latest' => 'Latest Products',
-            'hayfo-slider-wc-popular' => 'Most Popular Products'
+            'hayfo-slider-wc-popular' => 'Most Popular Products',
+            'hayfo-slider-wc-onsale' => 'On Sale Products'
         );
 
         foreach( $shortcodes as $shortcode => $title ) {
@@ -35,7 +36,21 @@ class Shortcode {
 
         ob_start();
         echo "$title";
-        Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 
+        // Product::display_products( $title === "Latest Products" ? Query::latest_query_array() : Query::popular_query_array() ); 
+
+        // improve case checking
+
+        switch( $title ) {
+            case 'Latest Products':
+                Product::display_products( Query::latest_query_array() );
+                break;
+            case 'Most Popular Products':
+                Product::display_products( Query::popular_query_array() );
+                break;
+            case 'On Sale Products':
+                Product::display_products( Query::on_sale_query_array() );
+                break;
+        }
         return ob_get_clean();
     }
 }

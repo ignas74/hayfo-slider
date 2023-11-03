@@ -8,8 +8,8 @@ class Product {
     
         $products = $query->get_products();
 
-        if ( ! empty( $products ) ) { 
-            include( dirname( plugin_dir_path( __FILE__ ) ) . '/assets/index.php' ); 
+        if( ! empty( $products ) ) { 
+            include( plugin_dir_path( dirname( __FILE__ ) ) . '/assets/index.php' ); 
         }
         else {
             ?>

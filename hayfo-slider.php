@@ -9,11 +9,12 @@
 /**
  * @TODO 
  * more than 2 shortcodes
- * Enqueue - register styles?
  * more Query
+ * sales badge
  * Shortcode move $title html
  * if ( is_plugin_active( 'woocommerce/woocommerce.php' ) path?
- * uninstall.php, activate, deactivate plugin
+ * uninstall.php, ((activate, deactivate plugin) no need if not dealing with post types or URL's)
+ * license
  */
 
 if ( ! defined( 'ABSPATH' )) die;
@@ -23,7 +24,7 @@ require_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // is_plugin_active()
 add_action( 'init', 'hayfo_slider_init' );
 
 function hayfo_slider_init() {
-    if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {  // Probably wrong dir as I have woocommerce core inside the plugin
+    if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {  // Probably wrong dir as I have woocommerce core inside the plugin
         require_once plugin_dir_path( __FILE__ ) . 'includes/Init.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/Admin.php';
         require_once plugin_dir_path( __FILE__ ) . 'includes/Enqueue.php'; 
