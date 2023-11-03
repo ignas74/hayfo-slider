@@ -8,7 +8,6 @@
 
 /**
  * @TODO 
- * fe console errors
  * more than 2 shortcodes
  * Enqueue - register styles?
  * more Query
