@@ -11,7 +11,7 @@ class Admin {
         add_filter( 'plugin_action_links_' . plugin_basename( dirname( dirname( __FILE__ ) ) ) . '/hayfo-slider.php', array( $this, 'plugin_link_to_admin_page' ) );
     }
 
-   function plugin_link_to_admin_page( $links_array ) {
+    function plugin_link_to_admin_page( $links_array ) {
         $link[] = '<a href="' . esc_url( admin_url( 'admin.php?page=hayfo_slider_settings_page' ) ) . '">Settings</a>';
         return array_merge( $links_array, $link );
     }

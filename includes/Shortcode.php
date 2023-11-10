@@ -20,9 +20,9 @@ class Shortcode {
     function register() {
         $shortcodes = array(
             // Value checking
-            'hayfo-slider-wc-latest' => 'Latest Products',
-            'hayfo-slider-wc-popular' => 'Most Popular Products',
-            'hayfo-slider-wc-onsale' => 'On Sale Products'
+            'hayfo-slider-wc-latest'    => 'Latest Products',
+            'hayfo-slider-wc-popular'   => 'Most Popular Products',
+            'hayfo-slider-wc-onsale'    => 'On Sale Products'
         );
 
         foreach( $shortcodes as $shortcode => $title ) {
