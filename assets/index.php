@@ -18,7 +18,7 @@
 
                 <!-- ID: 16 pirmas statement'as shauna. turetu antra shaut. use switch? -->
 
-                <?php if( ! $product->is_on_sale() ) : ?>
+                <?php if( ! $product->is_on_sale() && count( $current_price ) < 2 ) : ?>
 
                     <?php echo 'normal' . '<br>'; ?>
                     <span class="current-price">
@@ -28,7 +28,6 @@
                     
                     <?php var_dump( $current_price ); ?>
                 <?php elseif ( $product->is_on_sale() && count( $current_price ) > 1 ) : ?>
-
 
                     <?php echo 'from - to' . '<br>'; ?>
                     <span class="current-price">
