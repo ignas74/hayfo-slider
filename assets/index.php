@@ -16,6 +16,8 @@
                     <?php echo esc_html( $product->get_title() ); ?>
                 </span>
 
+                <!-- ID: 16 pirmas statement'as shauna. turetu antra shaut. use switch? -->
+
                 <?php if( ! $product->is_on_sale() ) : ?>
 
                     <?php echo 'normal' . '<br>'; ?>
